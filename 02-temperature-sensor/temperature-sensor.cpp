@@ -21,7 +21,7 @@ int main()
         printf("Wi-Fi init failed\n");
         return -1;
     }
-    while (true){
+    while (true){ 
 
         //read raw 12-bit value
         uint16_t raw= adc_read();

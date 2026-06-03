@@ -1,0 +1,6 @@
+02-temperature-sensor
+
+Reads the internal temperature sensor of the rasperry pi pico w via ADC and outputs the value over USB serial.
+
+
+
