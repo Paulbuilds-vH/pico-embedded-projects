@@ -1,5 +1,5 @@
-#ifndef _LWIPOPTS_EXAMPLE_COMMONH_H
-#define _LWIPOPTS_EXAMPLE_COMMONH_H
+#ifndef LWIPOPTS_EXAMPLE_COMMONH_H
+#define LWIPOPTS_EXAMPLE_COMMONH_H
 
 
 // Common settings used in most of the pico_w examples
@@ -89,4 +89,4 @@
 #define SLIP_DEBUG                  LWIP_DBG_OFF
 #define DHCP_DEBUG                  LWIP_DBG_OFF
 
-#endif /* __LWIPOPTS_H__ */
+#endif /* LWIPOPTS_EXAMPLE_COMMONH_H */
