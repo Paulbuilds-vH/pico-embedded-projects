@@ -33,9 +33,11 @@ project(weather-station C CXX ASM)
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
-# Add executable. Default name is the project name, version 0.1
-
-add_executable(weather-station weather-station.cpp )
+# Add executable: Hier fügst du bmp180.cpp hinzu!
+add_executable(weather-station 
+    weather-station.cpp 
+    bmp180.cpp
+)
 
 pico_set_program_name(weather-station "weather-station")
 pico_set_program_version(weather-station "0.1")
@@ -47,21 +49,17 @@ pico_generate_pio_header(weather-station ${CMAKE_CURRENT_LIST_DIR}/blink.pio)
 pico_enable_stdio_uart(weather-station 0)
 pico_enable_stdio_usb(weather-station 1)
 
-# Add the standard library to the build
-target_link_libraries(weather-station
-        pico_stdlib)
-
 # Add the standard include files to the build
 target_include_directories(weather-station PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
-# Add any user requested libraries
-target_link_libraries(weather-station 
+# Alle Bibliotheken sauber in einem Block verlinken
+target_link_libraries(weather-station
+        pico_stdlib
         hardware_i2c
         hardware_pio
         pico_cyw43_arch_lwip_threadsafe_background
-        )
+)
 
 pico_add_extra_outputs(weather-station)
-
